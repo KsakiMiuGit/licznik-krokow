@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProjektCrossplatform.Views.WeekResult"
+             xmlns:charts="clr-namespace:Microcharts.Maui;assembly=Microcharts.Maui">
+    <StackLayout>
+        <Label Text="Twój tydzień" FontSize="28" HorizontalOptions="Center"  Grid.Row="0" Padding="20"/>
+        <charts:ChartView x:Name="chartViewXaml" HeightRequest="300" BackgroundColor="Transparent"/>
+        <ScrollView VerticalOptions="EndAndExpand">
+            <CollectionView x:Name="CollectionView">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Orientation="Vertical" Padding="10">
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding DayOfWeek}"  FontSize="16" />
+                                <Label Text=", " FontSize="16"/>
+                                <Label Text="{Binding LastUpdatedDate, StringFormat='{0:dd/MM/yyyy}'}" FontSize="16"/>
+                            </StackLayout>
+
+                            <Label Text="{Binding StepCountDb}" FontSize="20"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </ScrollView>
+    </StackLayout>
+</ContentPage>

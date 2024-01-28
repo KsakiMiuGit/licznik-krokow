@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+	x:Class="ProjektCrossplatform.AppShell"
+	xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:views="clr-namespace:ProjektCrossplatform.Views"
+	xmlns:local="clr-namespace:ProjektCrossplatform">
+    
+    <TabBar>
+		<ShellContent
+			Icon="walkiconwhite.png"
+			ContentTemplate="{DataTemplate views:MainPage}" />
+        <ShellContent
+			Icon="resulticonwhite.png"
+			ContentTemplate="{DataTemplate views:WeekResult}" />
+        <ShellContent
+			Icon="listiconwhite.png"
+			ContentTemplate="{DataTemplate views:ListDetailPage}" />
+        <ShellContent
+			Icon="calculatoriconwhite.png"
+			ContentTemplate="{DataTemplate views:Calculator}" />
+        <ShellContent
+			Icon="usericonwhite.png"
+			ContentTemplate="{DataTemplate views:Options}" />
+    </TabBar>
+</Shell>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 x:Class="ProjektCrossplatform.Views.ListDetailPage">
+    <Grid Padding="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Label Text="Dieta" FontSize="28" HorizontalOptions="Center"  Grid.Row="0"/>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Margin="0,20,0,0" Grid.Row="1">
+            <Label Text="Woda" FontSize="25" VerticalOptions="CenterAndExpand"/>
+            <Entry Placeholder="1000 ml" HorizontalOptions="StartAndExpand" x:Name="WaterEntry"/>
+            <Label Text="Kcal" FontSize="25" VerticalOptions="CenterAndExpand"/>
+            <Entry Placeholder="2000 kcal" HorizontalOptions="StartAndExpand" x:Name="KcalEntry"/>
+            <Button Text="+" HorizontalOptions="End" Margin="0,0,10,0" Clicked="Button_Clicked"/>
+        </StackLayout>
+        <CollectionView x:Name="collectionview" Grid.Row="2">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout>
+                        <Label Text="{Binding Date}" FontSize="16" />
+                        <Label Text="{Binding Title}" FontSize="20" />
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</ContentPage>

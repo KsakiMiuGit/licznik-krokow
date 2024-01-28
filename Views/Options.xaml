@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProjektCrossplatform.Views.Options">
+
+    <StackLayout Padding="20">
+        <Label Text="Ustawienia" FontSize="28" HorizontalOptions="Center" />
+        <Label Text="Data urodzenia" FontSize="18" Margin="0,20,0,0"/>
+        <DatePicker x:Name="DatePicker" />
+
+        <Label Text="Płeć" FontSize="18" />
+        <StackLayout Orientation="Horizontal">
+            <RadioButton Content="Kobieta" Value="Kobieta" x:Name="MaleRadioButton"/>
+            <RadioButton Content="Mężczyzna" Value="Mezczyzna" x:Name="FemaleRadioButton"/>
+        </StackLayout>
+        
+        <Label Text="Cel kroków" FontSize="18" />
+        <Entry Placeholder="3000" Keyboard="Numeric" x:Name="StepLimitEntry"/>
+
+        <Label Text="Cel kaloryczny na dzień (kcal)" FontSize="18" />
+        <Entry Placeholder="2000 kcal" Keyboard="Numeric" x:Name="CalorieGoalEntry"/>
+
+        <Label Text="Cel wody na dzień (ml)" FontSize="18" />
+        <Entry Placeholder="2500 ml" Keyboard="Numeric" x:Name="WaterGoalEntry"/>
+
+        <Button Text="Zapisz" Clicked="SaveButton_Clicked" HorizontalOptions="Center" VerticalOptions="EndAndExpand" />
+    </StackLayout>
+</ContentPage>

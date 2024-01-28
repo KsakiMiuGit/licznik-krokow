@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProjektCrossplatform.Views.Calculator">
+    <StackLayout Padding="20" >
+        <Label Text="Kalkulator" FontSize="28" HorizontalOptions="Center" />
+
+        <Label Text="Waga" FontSize="18" Margin="0,20,0,0"/>
+        <Entry Placeholder="70" Keyboard="Numeric" x:Name="WeightEntry"/>
+
+        <Label Text="Wzrost" FontSize="18" Margin="0,10,0,0"/>
+        <Entry Placeholder="175" Keyboard="Numeric" x:Name="HeightEntry"/>
+
+        <Label Text="Aktywność fizyczna" FontSize="18" Margin="0,10,0,0"/>
+        <Picker x:Name="ActivityLevelPicker" Title="Wybierz aktywność">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Niska aktywność fizyczna</x:String>
+                    <x:String>Umiarkowana aktywność fizyczna</x:String>
+                    <x:String>Wysoka aktywność fizyczna</x:String>
+                    <x:String>Bardzo wysoka aktywność fizyczna</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
+        <Button Text="Oblicz" Clicked="CalculateBMRButton_Clicked" HorizontalOptions="Center" VerticalOptions="StartAndExpand" Margin="0,20,0,0"/>
+
+        <Label>
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="PPM" FontSize="17" />
+                    <Span Text="(podstawowa przemiana materii)" FontSize="14" />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        <Label x:Name="ppmLabel" FontSize="20"/>
+        <Label>
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="CPM" FontSize="17" />
+                    <Span Text="(całkowita przemiana materii)" FontSize="14" />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        <Label x:Name="cpmLabel" FontSize="20"/>
+        <Label Text="Woda" FontSize="17"/>
+        <Label x:Name="waterLabel" FontSize="20"/>
+        <Label Text="BMI" FontSize="17"/>
+        <Label x:Name="bmiLabel" FontSize="20" Margin="0,0,0,10"/>
+    </StackLayout>
+</ContentPage>

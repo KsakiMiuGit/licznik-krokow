@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 x:Class="ProjektCrossplatform.Views.MainPage">
+
+    <Grid Padding="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Label Text="Licznik kroków" FontSize="28" HorizontalOptions="Center"  Grid.Row="0"/>
+        
+        <Label x:Name="stepCountLabel" FontSize="45" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Grid.Row="1" />
+        <Label Text="0" FontSize="25" HorizontalOptions="Start" VerticalOptions="Start" Grid.Row="2"/>
+        <Label x:Name="goalStep" FontSize="25" HorizontalOptions="End" VerticalOptions="Start" Grid.Row="2"/>
+        <StackLayout  Grid.Row ="3" HorizontalOptions="FillAndExpand" VerticalOptions="End">
+            <ProgressBar Progress="{Binding ProgressPercentage}" HeightRequest="30" Grid.Row="3"/>
+        </StackLayout>
+    </Grid>
+</ContentPage>
